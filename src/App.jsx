@@ -6,6 +6,9 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import AIChat from "./pages/AIChat";
+import ForgotPassword from "./pages/ForgotPassword";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 import ProtectedRoute from "./components/common/ProtectedRoute";
 
@@ -38,8 +41,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+        
+        <Route
+  path="/forgot-password"
+  element={<ForgotPassword />}
+/>
+<Route path="/terms" element={<Terms />} />
 
+<Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
+
 
       </Routes>
 

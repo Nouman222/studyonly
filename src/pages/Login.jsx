@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function Login() {
   const { login } = useAuth();
@@ -61,10 +62,19 @@ function Login() {
       ) {
         setError("Email or password is incorrect.");
       }
+      else if (
+  error.message ===
+  "Please verify your email first."
+) {
+  setError(
+    "Please verify your email before login."
+  );
+}
 
       else {
         setError("Something went wrong.");
       }
+      
 
     } finally {
       setLoading(false);
@@ -117,6 +127,16 @@ function Login() {
             className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
+        <div className="text-right">
+
+  <Link
+    to="/forgot-password"
+    className="text-indigo-600 hover:underline"
+  >
+    Forgot Password?
+  </Link>
+
+</div>
 
         <button
           disabled={loading}
