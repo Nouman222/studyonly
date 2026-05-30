@@ -15,9 +15,12 @@ function Dashboard() {
             Upload notes and generate AI summaries instantly.
           </p>
 
-          <button className="mt-6 bg-indigo-600 text-white px-5 py-2 rounded-xl">
-            Open Tool
-          </button>
+         <Link
+  to="/dashboard/notes"
+  className="bg-indigo-600 text-white px-5 py-3 rounded-2xl inline-block mt-4"
+>
+  Open Notes
+</Link>
         </div>
 
         <div className="bg-white p-6 rounded-3xl shadow-sm border hover:shadow-md transition">
@@ -27,9 +30,12 @@ function Dashboard() {
             Create quizzes from your study materials.
           </p>
 
-          <button className="mt-6 bg-indigo-600 text-white px-5 py-2 rounded-xl">
-            Generate Quiz
-          </button>
+          <Link
+  to="/dashboard/quiz"
+  className="bg-indigo-600 text-white px-5 py-3 rounded-2xl inline-block mt-4"
+>
+  Open Quiz Generator
+</Link>
         </div>
 
         <div className="bg-white p-6 rounded-3xl shadow-sm border hover:shadow-md transition">
